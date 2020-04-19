@@ -51,7 +51,7 @@ class LinePainter extends CustomPainter {
     final p2 = Offset(screenWidth, screenHeight / 2);
     final paint = Paint()
       ..color = Colors.white
-      ..strokeWidth = 4;
+      ..strokeWidth = 8;
     canvas.drawLine(p1, p2, paint);
   }
 
