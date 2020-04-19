@@ -25,14 +25,19 @@ class MyWidget extends StatelessWidget {
               ),
             ),
           ),
-          CustomPaint(
-            size: Size(300, 300),
-            painter: LinePainter(
-              screenHeight: MediaQuery.of(context).size.height,
-              screenWidth: MediaQuery.of(context).size.width,
-
-            ),
-          )
+          TweenAnimationBuilder(
+              tween: Tween<double>(
+                  begin: 0, end: MediaQuery.of(context).size.width),
+              duration: Duration(milliseconds: 4000),
+              builder: (context, double i, Widget child) {
+                return CustomPaint(
+                  size: Size(300, 300),
+                  painter: LinePainter(
+                    screenHeight: MediaQuery.of(context).size.height,
+                    screenWidth: i,
+                  ),
+                );
+              })
         ],
       ),
     );
@@ -57,6 +62,6 @@ class LinePainter extends CustomPainter {
 
   @override
   bool shouldRepaint(CustomPainter old) {
-    return false;
+    return true;
   }
 }
