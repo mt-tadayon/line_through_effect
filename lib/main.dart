@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:math';
 
 void main() {
   runApp(
@@ -11,6 +12,24 @@ void main() {
 class MyWidget extends StatelessWidget {
   final String myText = 'We Love To Play!';
 
+  List<Widget> listOfFrontLetter(String text) {
+    var listOfLetter = text.split('');
+    print(listOfLetter);
+    return listOfLetter.map((letter) {
+      return Text(
+        letter,
+        style: TextStyle(
+          fontSize: 62.0,
+          color: randomVisibility() > 0.5 ? Colors.transparent : Colors.black,
+        ),
+      );
+    }).toList();
+  }
+
+  randomVisibility() {
+    return Random().nextDouble();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,11 +37,17 @@ class MyWidget extends StatelessWidget {
       body: Stack(
         children: <Widget>[
           Center(
-            child: Text(
-              myText,
-              style: TextStyle(
-                fontSize: 46.0,
-              ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: myText
+                  .split('')
+                  .map((e) => Text(
+                        e,
+                        style: TextStyle(
+                          fontSize: 62.0,
+                        ),
+                      ))
+                  .toList(),
             ),
           ),
           TweenAnimationBuilder(
@@ -37,7 +62,13 @@ class MyWidget extends StatelessWidget {
                     screenWidth: i,
                   ),
                 );
-              })
+              }),
+          Center(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: listOfFrontLetter(myText),
+            ),
+          ),
         ],
       ),
     );
