@@ -14,12 +14,11 @@ class MyWidget extends StatelessWidget {
 
   List<Widget> listOfFrontLetter(String text) {
     var listOfLetter = text.split('');
-    print(listOfLetter);
     return listOfLetter.map((letter) {
       return Text(
         letter,
         style: TextStyle(
-          fontSize: 62.0,
+          fontSize: 42.0,
           color: randomVisibility() > 0.5 ? Colors.transparent : Colors.black,
         ),
       );
@@ -33,6 +32,15 @@ class MyWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: Container(
+        height: 100.0,
+        width: 100.0,
+        child: FloatingActionButton(
+          child: Text('Contact'),
+          onPressed: () {
+          },
+        ),
+      ),
       backgroundColor: Color(0xFF8dbfe9),
       body: Stack(
         children: <Widget>[
@@ -44,7 +52,7 @@ class MyWidget extends StatelessWidget {
                   .map((e) => Text(
                         e,
                         style: TextStyle(
-                          fontSize: 62.0,
+                          fontSize: 42.0,
                         ),
                       ))
                   .toList(),
