@@ -1,7 +1,8 @@
 # flutter_challenge_01
 
-A Flutter project for Line Through Effect. The link to CodePen is (https://codepen.io/mimifi/pen/GRproBR) 
-The original project is from Florin Pop, which is created with HTML, CSS and JS. CodePen link is (https://codepen.io/FlorinPop17/full/LYYGMOV)
+A Flutter project for Line Through Effect. The link to Flutter CodePen is https://codepen.io/mimifi/pen/GRproBR
+ 
+The original project is from Florin Pop, which is created with HTML, CSS and JS. CodePen link is https://codepen.io/FlorinPop17/full/LYYGMOV
 
 ## Getting Started
 
